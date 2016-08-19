@@ -1,6 +1,6 @@
 {
   "name": "ng2-file-upload",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "angular2 file upload directives",
   "scripts": {
     "flow.install:typings": "./node_modules/.bin/typings install",
@@ -19,8 +19,6 @@
     "flow.build:dev": "./node_modules/.bin/webpack --progress --color",
     "flow.serve:dev": "./node_modules/.bin/webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
     "flow.serve:prod": "NODE_ENV=production ./node_modules/.bin/webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
-    "prepublish": "npm run flow.clean && npm run flow.compile",
-    "postpublish": "npm run flow.deploy:gh-pages",
     "start": "npm run flow.serve:dev",
     "pretest": "npm run flow.lint",
     "test": "NODE_ENV=test ./node_modules/.bin/karma start",
@@ -48,15 +46,15 @@
   "homepage": "https://github.com/valor-software/ng2-file-upload#readme",
   "dependencies": {},
   "peerDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1"
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4"
   },
   "devDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/platform-browser": "^2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
     "async": "1.5.2",
     "bootstrap": "3.3.6",
     "codecov": "1.0.1",

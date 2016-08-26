@@ -7,6 +7,7 @@ import {FileUploader} from './file-uploader.class';
 @Directive({selector: '[ng2FileSelect]'})
 export class FileSelectDirective {
   @Input() public uploader:FileUploader;
+  @Input() public field: string;
 
   private element:ElementRef;
   public constructor(element:ElementRef) {
@@ -31,6 +32,10 @@ export class FileSelectDirective {
     let files = this.element.nativeElement.files;
     let options = this.getOptions();
     let filters = this.getFilters();
+
+    if (this.field) {
+      options['itemAlias'] = this.field;
+    }
 
     // if(!this.uploader.isHTML5) this.destroy();
 

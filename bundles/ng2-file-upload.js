@@ -39,10 +39,14 @@ System.registerDynamic("ng2-file-upload/components/file-upload/file-select.direc
       var files = this.element.nativeElement.files;
       var options = this.getOptions();
       var filters = this.getFilters();
+      if (this.field) {
+        options['itemAlias'] = this.field;
+      }
       this.uploader.addToQueue(files, options, filters);
       if (this.isEmptyAfterSelection()) {}
     };
     __decorate([core_1.Input(), __metadata('design:type', file_uploader_class_1.FileUploader)], FileSelectDirective.prototype, "uploader", void 0);
+    __decorate([core_1.Input(), __metadata('design:type', String)], FileSelectDirective.prototype, "field", void 0);
     __decorate([core_1.HostListener('change'), __metadata('design:type', Function), __metadata('design:paramtypes', []), __metadata('design:returntype', Object)], FileSelectDirective.prototype, "onChange", null);
     FileSelectDirective = __decorate([core_1.Directive({selector: '[ng2FileSelect]'}), __metadata('design:paramtypes', [core_1.ElementRef])], FileSelectDirective);
     return FileSelectDirective;

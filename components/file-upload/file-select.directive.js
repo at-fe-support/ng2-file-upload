@@ -29,6 +29,9 @@ var FileSelectDirective = (function () {
         var files = this.element.nativeElement.files;
         var options = this.getOptions();
         var filters = this.getFilters();
+        if (this.field) {
+            options['itemAlias'] = this.field;
+        }
         // if(!this.uploader.isHTML5) this.destroy();
         this.uploader.addToQueue(files, options, filters);
         if (this.isEmptyAfterSelection()) {
@@ -38,6 +41,10 @@ var FileSelectDirective = (function () {
         core_1.Input(), 
         __metadata('design:type', file_uploader_class_1.FileUploader)
     ], FileSelectDirective.prototype, "uploader", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], FileSelectDirective.prototype, "field", void 0);
     __decorate([
         core_1.HostListener('change'), 
         __metadata('design:type', Function), 
